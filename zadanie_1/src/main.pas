@@ -3,27 +3,25 @@ program BubbleSort;
 uses
   SysUtils;
 
-const
-  ARRAY_SIZE = 50;
-
 type
-  TIntArray = array[1..ARRAY_SIZE] of Integer;
+  TIntArray = array of Integer;
 
-procedure GenerujLiczby(var arr: TIntArray);
+procedure GenerujLiczby(var arr: TIntArray; od, do_, ile: Integer);
 var
   i: Integer;
 begin
+  SetLength(arr, ile);
   Randomize;
-  for i := 1 to ARRAY_SIZE do
-    arr[i] := Random(101);
+  for i := 0 to ile - 1 do
+    arr[i] := Random(do_ - od + 1) + od;
 end;
 
 procedure SortujLiczby(var arr: TIntArray);
 var
   i, j, temp: Integer;
 begin
-  for i := 1 to ARRAY_SIZE - 1 do
-    for j := 1 to ARRAY_SIZE - i do
+  for i := 0 to Length(arr) - 2 do
+    for j := 0 to Length(arr) - 2 - i do
       if arr[j] > arr[j + 1] then
       begin
         temp     := arr[j];
@@ -36,7 +34,7 @@ procedure WypiszLiczby(var arr: TIntArray);
 var
   i: Integer;
 begin
-  for i := 1 to ARRAY_SIZE do
+  for i := 0 to Length(arr) - 1 do
     Write(arr[i], ' ');
   WriteLn;
 end;
@@ -45,7 +43,7 @@ var
   liczby: TIntArray;
 
 begin
-  GenerujLiczby(liczby);
+  GenerujLiczby(liczby, 0, 100, 30);
   WriteLn('Wygenerowane liczby:');
   WypiszLiczby(liczby);
 
