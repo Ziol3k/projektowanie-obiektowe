@@ -1,0 +1,3 @@
+#!/bin/bash
+curl -X DELETE http://localhost:8000/api/products/1
+echo
