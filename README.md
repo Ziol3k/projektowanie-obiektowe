@@ -1,4 +1,4 @@
-Zadanie 1  Paradygmaty Sortowanie bąbelkowe
+# Zadanie 1  Paradygmaty Sortowanie bąbelkowe
 
 ✅ 3.0 Procedura do generowania 50 losowych liczb od 0 do 100 [commit](https://github.com/Ziol3k/projektowanie-obiektowe/commit/50a24c5c169d25adb01fc9a18accaac08b504363)
 
@@ -12,11 +12,15 @@ Zadanie 1  Paradygmaty Sortowanie bąbelkowe
 
 Kod: [Link do zadania 1](https://github.com/Ziol3k/projektowanie-obiektowe/tree/main/zadanie_1)
 
-[demo]()
+[demo](https://github.com/Ziol3k/projektowanie-obiektowe/blob/main/demos/demo_zadanie_1.mp4)
 
 
 
-Zadanie 2 Wzorce architektury
+https://github.com/user-attachments/assets/88766c98-3e53-4ce1-a89a-69e97b75d852
+
+
+
+# Zadanie 2 Wzorce architektury
 Symfony (PHP)
 
 Należy stworzyć aplikację webową na bazie frameworka Symfony na
@@ -40,7 +44,15 @@ Kod: [Link do zadania 2](https://github.com/Ziol3k/projektowanie-obiektowe/tree/
 
 
 
-Zadanie 3 Wzorce kreacyjne
+
+
+https://github.com/user-attachments/assets/306c434c-74de-47db-ba15-e059001f66d4
+
+
+
+
+
+# Zadanie 3 Wzorce kreacyjne
 Spring Boot (Kotlin)
 
 Proszę stworzyć prosty serwis do autoryzacji, który zasymuluje
@@ -65,7 +77,14 @@ Kod: [Link do zadania 3](https://github.com/Ziol3k/projektowanie-obiektowe/tree/
 [demo](https://github.com/Ziol3k/projektowanie-obiektowe/blob/main/demos/demo_zadanie_3.mp4)
 
 
-Zadanie 4 Wzorce strukturalne
+
+
+https://github.com/user-attachments/assets/a232802a-3bd6-45ea-a220-bb03f8871a03
+
+
+
+
+# Zadanie 4 Wzorce strukturalne
 Echo (Go)
 
 Należy stworzyć aplikację w Go na frameworku echo. Aplikacja ma mieć
@@ -86,3 +105,9 @@ endpointu można wysyłać w jako GET lub POST.
 Kod: [Link do zadania 4](https://github.com/Ziol3k/projektowanie-obiektowe/tree/main/zadanie_4)
 
 [demo](https://github.com/Ziol3k/projektowanie-obiektowe/blob/main/demos/demo_zadanie_4.mp4)
+
+
+
+
+https://github.com/user-attachments/assets/5030e02f-5bb5-4ac2-80bf-853f27776f51
+
