@@ -2,7 +2,9 @@ package main
 
 import (
 	"encoding/json"
+	"fmt"
 	"net/http"
+	"net/url"
 
 	"github.com/glebarez/sqlite"
 	"github.com/labstack/echo/v4"
@@ -14,6 +16,15 @@ type Weather struct {
 	Location	string	`json:"location"`
 	Temperature	float64 `json:"temperature"`
 	Description	string	`json:"description"`
+}
+
+type GeocodingResponse struct {
+	Results []struct {
+		Name      string  `json:"name"`
+		Latitude  float64 `json:"latitude"`
+		Longitude float64 `json:"longitude"`
+		Country   string  `json:"country"`
+	} `json:"results"`
 }
 
 type ExternalWeatherResponse struct {
@@ -50,9 +61,29 @@ func initDB() {
 	// }
 }
 
-func fetchExternalWeather(city string) (float64, error) {
-	url := "https://api.open-meteo.com/v1/forecast?latitude=52.2297&longitude=21.0122&current=temperature_2m"
+func getCoords(city string) (float64, float64, string, error) {
+	apiUrl := fmt.Sprintf("https://geocoding-api.open-meteo.com/v1/search?name=%s&count=1&language=en&format=json", url.QueryEscape(city))
+	
+	resp, err := http.Get(apiUrl)
+	if err != nil {
+		return 0, 0, "", err
+	}
+	defer resp.Body.Close()
 
+	var geo GeocodingResponse
+	json.NewDecoder(resp.Body).Decode(&geo)
+
+	if len(geo.Results) == 0 {
+		return 0, 0, "", fmt.Errorf("city not found")
+	}
+
+	res := geo.Results[0]
+	return res.Latitude, res.Longitude, fmt.Sprintf("%s, %s", res.Name, res.Country), nil
+}
+
+func fetchExternalWeather(lat, lon float64) (float64, error) {
+	url := fmt.Sprintf("https://api.open-meteo.com/v1/forecast?latitude=%f&longitude=%f&current=temperature_2m", lat, lon)
+	
 	resp, err := http.Get(url)
 	if err != nil {
 		return 0, err
@@ -60,33 +91,41 @@ func fetchExternalWeather(city string) (float64, error) {
 	defer resp.Body.Close()
 
 	var result ExternalWeatherResponse
-	if err := json.NewDecoder(resp.Body).Decode(&result); err != nil {
-		return 0, err
-	}
-
+	json.NewDecoder(resp.Body).Decode(&result)
 	return result.Current.Temperature, nil
 }
 
 func GetWeatherProxy(c echo.Context) error {
-	city := "Warsaw"
+	cityInput := c.QueryParam("city")
+	if cityInput == "" {
+		return c.JSON(http.StatusBadRequest, map[string]string{"error": "Please provide a city name, e.g., ?city=Tokyo"})
+	}
 
-	temp, err := fetchExternalWeather(city)
+	lat, lon, fullName, err := getCoords(cityInput)
 	if err != nil {
-		return c.String(http.StatusInternalServerError, "Error fetching external weather")
+		return c.JSON(http.StatusNotFound, map[string]string{"error": err.Error()})
 	}
 
-	newEntry := Weather{
-		Location:    city,
-		Temperature: temp,
-		Description: "Fetched from External Proxy",
+	temp, err := fetchExternalWeather(lat, lon)
+	if err != nil {
+		return c.String(http.StatusInternalServerError, "Error fetching weather")
 	}
-	db.Create(&newEntry)
+
+	db.Create(&Weather{
+		Location:    fullName,
+		Temperature: temp,
+		Description: "Real-time Proxy search",
+	})
+
+	var history []Weather
+	db.Where("location = ?", fullName).Find(&history)
 
 	return c.JSON(http.StatusOK, map[string]interface{}{
-		"status":  "Data fetched via Proxy and saved to DB",
-		"city":    city,
-		"temp":    temp,
-		"source":  "Open-Meteo API",
+		"found_location": fullName,
+		"latitude":       lat,
+		"longitude":      lon,
+		"current_temp":   temp,
+		"search_history": history,
 	})
 }
 
@@ -100,7 +139,7 @@ func main() {
 	initDB()
 
 	e:= echo.New()
-
+	e.File("/", "index.html")
 	e.GET("/weather/proxy", GetWeatherProxy)
 	e.POST("/weather/proxy", GetWeatherProxy)
 	e.Logger.Fatal(e.Start(":8081"))

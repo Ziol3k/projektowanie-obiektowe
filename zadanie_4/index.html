@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Weather Proxy Service</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-light">
+    <div class="container py-5">
+      <h2 class="mb-4">Sprawdź Pogodę</h2>
+
+      <div class="input-group mb-4">
+        <input
+          type="text"
+          id="cityInput"
+          class="form-control"
+          placeholder="Wpisz miasto"
+        />
+        <button class="btn btn-primary" onclick="getWeather()">Pobierz</button>
+      </div>
+
+      <div id="status" class="alert d-none"></div>
+
+      <h4>Historia wyszukiwań dla lokalizacji:</h4>
+      <table class="table table-striped table-hover bg-white border">
+        <thead class="table-dark">
+          <tr>
+            <th>ID</th>
+            <th>Lokalizacja</th>
+            <th>Temperatura</th>
+            <th>Opis</th>
+            <th>Data zapisu</th>
+          </tr>
+        </thead>
+        <tbody id="historyBody"></tbody>
+      </table>
+    </div>
+
+    <script>
+      async function getWeather() {
+        const city = document.getElementById("cityInput").value;
+        if (!city) return alert("Wpisz nazwę miasta!");
+
+        const statusDiv = document.getElementById("status");
+        statusDiv.className = "alert alert-info";
+        statusDiv.innerText = "Pobieranie danych przez Proxy...";
+        statusDiv.classList.remove("d-none");
+
+        try {
+          const response = await fetch(`/weather/proxy?city=${city}`);
+          const data = await response.json();
+
+          if (data.error) {
+            statusDiv.className = "alert alert-danger";
+            statusDiv.innerText = "Błąd: " + data.error;
+          } else {
+            statusDiv.className = "alert alert-success";
+            statusDiv.innerText = `Znaleziono: ${data.found_location}. Aktualna temperatura: ${data.current_temp}°C`;
+            updateTable(data.search_history);
+          }
+        } catch (err) {
+          statusDiv.className = "alert alert-danger";
+          statusDiv.innerText = "Błąd połączenia z serwerem.";
+        }
+      }
+
+      function updateTable(history) {
+        const tbody = document.getElementById("historyBody");
+        tbody.innerHTML = "";
+        history.reverse().forEach((row) => {
+          const tr = document.createElement("tr");
+          tr.innerHTML = `
+                    <td>${row.ID}</td>
+                    <td>${row.location}</td>
+                    <td>${row.temperature}°C</td>
+                    <td>${row.description}</td>
+                    <td>${new Date(row.CreatedAt).toLocaleString()}</td>
+                `;
+          tbody.appendChild(tr);
+        });
+      }
+    </script>
+  </body>
+</html>
