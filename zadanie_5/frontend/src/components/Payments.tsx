@@ -1,9 +1,14 @@
 import { FormEvent, useState } from "react";
 import type { PaymentData } from "../types";
+import { httpClient } from "../api/httpClient";
 
 type PaymentsProps = {
   amount: number;
   onPaymentSuccess?: () => void;
+};
+
+type PaymentResponse = {
+  message: string;
 };
 
 export function Payments({ amount, onPaymentSuccess }: PaymentsProps) {
@@ -21,21 +26,12 @@ export function Payments({ amount, onPaymentSuccess }: PaymentsProps) {
     };
 
     try {
-      const response = await fetch("http://localhost:3001/api/payments", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(paymentData),
-      });
+      const response = await httpClient.post<PaymentResponse>(
+        "/payments",
+        paymentData
+      );
 
-      const data = await response.json();
-
-      if (!response.ok) {
-        throw new Error(data.message);
-      }
-
-      setMessage(data.message);
+      setMessage(response.data.message);
       onPaymentSuccess?.();
     } catch {
       setMessage("Nie udało się wysłać płatności.");

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import type { Product } from "../types";
 import { useCart } from "../context/CartContext";
+import { httpClient } from "../api/httpClient";
 
 export function Products() {
   const [products, setProducts] = useState<Product[]>([]);
@@ -12,14 +13,8 @@ export function Products() {
   useEffect(() => {
     async function fetchProducts() {
       try {
-        const response = await fetch("http://localhost:3001/api/products");
-
-        if (!response.ok) {
-          throw new Error("Nie udało się pobrać produktów.");
-        }
-
-        const data: Product[] = await response.json();
-        setProducts(data);
+        const response = await httpClient.get<Product[]>("/products");
+        setProducts(response.data);
       } catch {
         setError("Wystąpił błąd podczas pobierania produktów.");
       } finally {
