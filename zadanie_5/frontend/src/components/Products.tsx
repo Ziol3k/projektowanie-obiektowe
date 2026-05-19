@@ -1,10 +1,13 @@
 import { useEffect, useState } from "react";
 import type { Product } from "../types";
+import { useCart } from "../context/CartContext";
 
 export function Products() {
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
+
+  const { addToCart } = useCart();
 
   useEffect(() => {
     async function fetchProducts() {
@@ -37,7 +40,13 @@ export function Products() {
       <ul>
         {products.map((product) => (
           <li key={product.id}>
-            {product.name} — {product.price} zł
+            <span>
+              {product.name} — {product.price} zł
+            </span>
+
+            <button type="button" onClick={() => addToCart(product)}>
+              Dodaj do koszyka
+            </button>
           </li>
         ))}
       </ul>
