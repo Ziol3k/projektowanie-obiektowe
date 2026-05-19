@@ -111,3 +111,28 @@ Kod: [Link do zadania 4](https://github.com/Ziol3k/projektowanie-obiektowe/tree/
 
 https://github.com/user-attachments/assets/5030e02f-5bb5-4ac2-80bf-853f27776f51
 
+
+
+
+# Zadanie 5 Wzorce behawioralne
+React (JavaScript/Typescript)
+
+✅ 3.0 W ramach projektu należy stworzyć komponenty Produkty oraz Płatności; komponent Produkty powinien pobierać listę produktów z aplikacji serwerowej, natomiast komponent Płatności powinien wysyłać dane płatności do aplikacji serwerowej. [commit](https://github.com/Ziol3k/projektowanie-obiektowe/commit/5072c7ae4a36252a68dfeff8a7046c2c1f02f340)
+
+✅ 3.5 Należy dodać komponent Koszyk wraz z osobnym widokiem; aplikacja powinna umożliwiać przechodzenie pomiędzy widokami przy użyciu routingu.[commit](https://github.com/Ziol3k/projektowanie-obiektowe/commit/086cfed0368853be39cb0bf9e7d63ce8c44b77b8)
+
+✅ 4.0 Dane pomiędzy komponentami, takimi jak Produkty, Koszyk i Płatności, powinny być przekazywane z wykorzystaniem React hooks, np. useState, useEffect lub useContext. [commit](https://github.com/Ziol3k/projektowanie-obiektowe/commit/df5a0b45c497a3a28de82067bf97dfe7543f9dee)
+
+✅ 4.5 Należy przygotować konfigurację umożliwiającą uruchomienie aplikacji klienckiej oraz serwerowej w kontenerach Docker za pomocą docker-compose.[commit](https://github.com/Ziol3k/projektowanie-obiektowe/commit/b07ad86321ff0145572b23bdf398190d2fa9d4be)
+
+✅ 5.0 Należy wykorzystać bibliotekę axios do komunikacji z serwerem oraz skonfigurować obsługę CORS, aby frontend mógł poprawnie komunikować się z backendem. [commit](https://github.com/Ziol3k/projektowanie-obiektowe/commit/9025320c1833ddfacee8e663e13bc5c15d19c78e)
+
+Kod: [Link do zadania 5](https://github.com/Ziol3k/projektowanie-obiektowe/tree/main/zadanie_5)
+
+[demo](https://github.com/Ziol3k/projektowanie-obiektowe/blob/main/demos/demo_zadanie_5.mp4)
+
+
+
+
+https://github.com/user-attachments/assets/5d2751db-1c79-40c7-9d13-4907f77c2bbf
+
