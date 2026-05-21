@@ -136,3 +136,33 @@ Kod: [Link do zadania 5](https://github.com/Ziol3k/projektowanie-obiektowe/tree/
 
 https://github.com/user-attachments/assets/5d2751db-1c79-40c7-9d13-4907f77c2bbf
 
+
+
+# Zadanie 5 Zapaszki
+Należy sprawdzić kod projektów JS 3.0, 3.5, 4.0,  kotlin, go, js - 4.5, 5.0.
+
+✅ 3.0 Należy skonfigurować husky + lint-staged uruchamianie lintowania przed commitem [commit](https://github.com/Ziol3k/projektowanie-obiektowe/commit/866dd4b0f807893113e1c2a94e63eebc64766961)
+
+✅ 3.5 Należy wyeliminować wszystkie bugi w kodzie w Sonarze (kod aplikacji klienckiej)[commit](https://github.com/Ziol3k/projektowanie-obiektowe/commit/f7073b0b9f3c2cf3be903e9082cc9d0c3feeebb3)
+
+✅ 4.0 Przeskanować oraz naprawić dowolny projekt open source narzędziem CodeQL [commit](https://github.com/Ziol3k/NodeGoat/commit/2d474ca04ca9a7cb972145e01174dfcf039c922d)
+
+✅ 4.5 Należy usunąć problemy typu Code Smell w kodzie w Sonarze (kotlin, go, js). Należy dodać badge z Sonara
+
+[commit 1](https://github.com/Ziol3k/projektowanie-obiektowe/commit/a3515191bb6c9a2f3f6717a7270923720d22db75)
+
+[commit 2](https://github.com/Ziol3k/projektowanie-obiektowe/commit/3d36d4c5b92f8200cae543578de07028eb97e849)
+
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=Ziol3k_projektowanie-obiektowe&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=Ziol3k_projektowanie-obiektowe)
+
+[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=Ziol3k_projektowanie-obiektowe&metric=bugs)](https://sonarcloud.io/summary/new_code?id=Ziol3k_projektowanie-obiektowe)
+
+[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=Ziol3k_projektowanie-obiektowe&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=Ziol3k_projektowanie-obiektowe)
+
+✅ 5.0 Skonfigurować Github Actions z linterem oraz CodeQL 
+[commit 1](https://github.com/Ziol3k/projektowanie-obiektowe/commit/e621c5f62af878f8c5969f3563fa0d8bd5301b5a)
+[commit 2](https://github.com/Ziol3k/projektowanie-obiektowe/commit/fe054125f09206df9b9dbd3203efbaf5d637174c)
+
+Kod: [Link do zadania 5](https://github.com/Ziol3k/projektowanie-obiektowe/tree/main/zadanie_6)
+
+[demo](https://github.com/Ziol3k/projektowanie-obiektowe/blob/main/demos/demo_zadanie_6.mp4)
