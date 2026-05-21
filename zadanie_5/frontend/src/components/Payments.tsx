@@ -1,24 +1,31 @@
-import { FormEvent, useState } from "react";
+import { useState } from "react";
+import type { SyntheticEvent } from "react";
 import type { PaymentData } from "../types";
 import { httpClient } from "../api/httpClient";
 
-type PaymentsProps = {
+type PaymentsProps = Readonly<{
   amount: number;
-  onPaymentSuccess?: () => void;
-};
+  onPaymentSuccess: () => void;
+}>;
 
 type PaymentResponse = {
   message: string;
 };
 
-export function Payments({ amount, onPaymentSuccess }: PaymentsProps) {
+export function Payments({
+  amount,
+  onPaymentSuccess,
+}: PaymentsProps) {
   const [fullName, setFullName] = useState("");
   const [cardNumber, setCardNumber] = useState("");
   const [message, setMessage] = useState("");
 
-  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
+  function handleSubmit(event: SyntheticEvent) {
     event.preventDefault();
+    void submitPayment();
+  }
 
+  async function submitPayment() {
     const paymentData: PaymentData = {
       fullName,
       cardNumber,
@@ -32,7 +39,7 @@ export function Payments({ amount, onPaymentSuccess }: PaymentsProps) {
       );
 
       setMessage(response.data.message);
-      onPaymentSuccess?.();
+      onPaymentSuccess();
     } catch {
       setMessage("Nie udało się wysłać płatności.");
     }

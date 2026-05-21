@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import type { Product } from "../types";
-import { useCart } from "../context/CartContext";
+import { useCart } from "../context/useCart";
 import { httpClient } from "../api/httpClient";
 
 export function Products() {

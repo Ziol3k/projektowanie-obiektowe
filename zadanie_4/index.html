@@ -64,6 +64,8 @@
             updateTable(data.search_history);
           }
         } catch (err) {
+          console.error(err);
+
           statusDiv.className = "alert alert-danger";
           statusDiv.innerText = "Błąd połączenia z serwerem.";
         }

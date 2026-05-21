@@ -8,6 +8,7 @@ class SingletonTaskApplicationTests {
 
 	@Test
 	fun contextLoads() {
+		// just bcs
 	}
 
 }

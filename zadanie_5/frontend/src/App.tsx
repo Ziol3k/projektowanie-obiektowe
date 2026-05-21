@@ -3,7 +3,7 @@ import { Link, Route, Routes } from "react-router";
 import { Products } from "./components/Products";
 import { Payments } from "./components/Payments";
 import { Cart } from "./components/Cart";
-import { useCart } from "./context/CartContext";
+import { useCart } from "./context/useCart";
 
 function App() {
   const { totalAmount, clearCart } = useCart();
