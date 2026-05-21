@@ -147,6 +147,8 @@ Należy sprawdzić kod projektów JS 3.0, 3.5, 4.0,  kotlin, go, js - 4.5, 5.0.
 
 ✅ 4.0 Przeskanować oraz naprawić dowolny projekt open source narzędziem CodeQL [commit](https://github.com/Ziol3k/NodeGoat/commit/2d474ca04ca9a7cb972145e01174dfcf039c922d)
 
+[link do forka](https://github.com/Ziol3k/NodeGoat)
+
 ✅ 4.5 Należy usunąć problemy typu Code Smell w kodzie w Sonarze (kotlin, go, js). Należy dodać badge z Sonara
 
 [commit 1](https://github.com/Ziol3k/projektowanie-obiektowe/commit/a3515191bb6c9a2f3f6717a7270923720d22db75)
@@ -166,3 +168,8 @@ Należy sprawdzić kod projektów JS 3.0, 3.5, 4.0,  kotlin, go, js - 4.5, 5.0.
 Kod: [Link do zadania 5](https://github.com/Ziol3k/projektowanie-obiektowe/tree/main/zadanie_6)
 
 [demo](https://github.com/Ziol3k/projektowanie-obiektowe/blob/main/demos/demo_zadanie_6.mp4)
+
+
+
+https://github.com/user-attachments/assets/e4121aaf-de1d-4e2e-84f4-af5e035e1914
+
