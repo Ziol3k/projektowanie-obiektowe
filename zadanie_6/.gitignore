@@ -1,0 +1,25 @@
+# Node
+node_modules/
+npm-debug.log*
+
+# Husky
+.husky/_
+
+# Kotlin / Gradle
+.gradle/
+build/
+out/
+
+# IntelliJ
+.idea/
+*.iml
+
+# VSCode
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log

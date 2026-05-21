@@ -1,0 +1,35 @@
+{
+  "name": "zadanie_6",
+  "version": "1.0.0",
+  "scripts": {
+    "prepare": "husky",
+
+    "lint:frontend": "cd ../zadanie_5/frontend && npm run lint",
+
+    "lint:backend": "cd ../zadanie_5/backend && npm run build",
+
+    "lint:go": "cd ../zadanie_4 && go vet ./...",
+
+    "lint:kotlin": "cd ../zadanie_3/singleton-task && gradlew.bat build"
+  },
+
+  "devDependencies": {
+    "husky": "^9.1.7",
+    "lint-staged": "^16.4.0"
+  },
+
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "npm run lint:frontend",
+      "npm run lint:backend"
+    ],
+
+    "*.go": [
+      "npm run lint:go"
+    ],
+
+    "*.kt": [
+      "npm run lint:kotlin"
+    ]
+  }
+}
