@@ -49,7 +49,7 @@ export function Payments({ amount, onPaymentSuccess }: PaymentsProps) {
       <form onSubmit={handleSubmit}>
         <div>
           <label>
-            Imię i nazwisko:
+            Imię i nazwisko:{" "}
             <input
               type="text"
               value={fullName}
@@ -61,7 +61,7 @@ export function Payments({ amount, onPaymentSuccess }: PaymentsProps) {
 
         <div>
           <label>
-            Numer karty:
+            Numer karty:{" "}
             <input
               type="text"
               value={cardNumber}
@@ -73,7 +73,7 @@ export function Payments({ amount, onPaymentSuccess }: PaymentsProps) {
 
         <div>
           <label>
-            Kwota:
+            Kwota:{" "}
             <input type="number" value={amount} readOnly />
           </label>
         </div>
