@@ -20,18 +20,40 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        language:
-          - javascript-typescript
-          - go
-          - java-kotlin
+        include:
+          - language: javascript-typescript
+            build-mode: none
+          - language: go
+            build-mode: autobuild
+          - language: java-kotlin
+            build-mode: manual
 
     steps:
       - uses: actions/checkout@v4
 
-      - uses: github/codeql-action/init@v3
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@v3
         with:
           languages: ${{ matrix.language }}
+          build-mode: ${{ matrix.build-mode }}
 
-      - uses: github/codeql-action/autobuild@v3
+      - name: Setup Java
+        if: matrix.language == 'java-kotlin'
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 21
 
-      - uses: github/codeql-action/analyze@v3
+      - name: Build Kotlin project
+        if: matrix.language == 'java-kotlin'
+        working-directory: zadanie_3/singleton-task
+        run: |
+          chmod +x ./gradlew
+          ./gradlew build
+
+      - name: Autobuild
+        if: matrix.build-mode == 'autobuild'
+        uses: github/codeql-action/autobuild@v3
+
+      - name: Perform CodeQL Analysis
+        uses: github/codeql-action/analyze@v3
