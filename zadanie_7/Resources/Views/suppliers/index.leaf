@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="utf-8">
+    <title>Dostawcy</title>
+</head>
+<body>
+    <h1>Dostawcy</h1>
+
+    <nav>
+        <a href="/web/products">Produkty</a> |
+        <a href="/web/categories">Kategorie</a> |
+        <a href="/web/suppliers">Dostawcy</a>
+    </nav>
+
+    <p>
+        <a href="/web/suppliers/create">Dodaj dostawcę</a>
+    </p>
+
+    <table border="1" cellpadding="8">
+        <thead>
+            <tr>
+                <th>Nazwa</th>
+                <th>Email</th>
+                <th>Akcje</th>
+            </tr>
+        </thead>
+        <tbody>
+        #for(supplier in suppliers):
+            <tr>
+                <td>#(supplier.name)</td>
+                <td>#(supplier.email)</td>
+                <td>
+                    <a href="/web/suppliers/#(supplier.id)/edit">Edytuj</a>
+
+                    <form method="post" action="/web/suppliers/#(supplier.id)/delete" style="display:inline;">
+                        <button type="submit">Usuń</button>
+                    </form>
+                </td>
+            </tr>
+        #endfor
+        </tbody>
+    </table>
+</body>
+</html>

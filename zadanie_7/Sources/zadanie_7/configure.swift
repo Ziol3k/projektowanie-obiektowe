@@ -8,6 +8,8 @@ public func configure(_ app: Application) async throws {
 
     app.views.use(.leaf)
 
+    app.migrations.add(CreateCategory())
+    app.migrations.add(CreateSupplier())
     app.migrations.add(CreateProduct())
 
     try routes(app)

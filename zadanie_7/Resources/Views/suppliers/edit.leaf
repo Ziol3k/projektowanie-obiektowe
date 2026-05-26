@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="utf-8">
+    <title>Edytuj dostawcę</title>
+</head>
+<body>
+    <h1>Edytuj dostawcę</h1>
+
+    <nav>
+        <a href="/web/products">Produkty</a> |
+        <a href="/web/categories">Kategorie</a> |
+        <a href="/web/suppliers">Dostawcy</a>
+    </nav>
+
+    <form method="post" action="/web/suppliers/#(supplier.id)/edit">
+        <p>
+            <label>Nazwa</label><br>
+            <input type="text" name="name" value="#(supplier.name)" required>
+        </p>
+
+        <p>
+            <label>Email</label><br>
+            <input type="email" name="email" value="#(supplier.email)" required>
+        </p>
+
+        <button type="submit">Zapisz</button>
+    </form>
+
+    <p>
+        <a href="/web/suppliers">Powrót</a>
+    </p>
+</body>
+</html>

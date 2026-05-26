@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="utf-8">
+    <title>Edytuj produkt</title>
+</head>
+<body>
+    <h1>Edytuj produkt</h1>
+
+    <nav>
+        <a href="/web/products">Produkty</a> |
+        <a href="/web/categories">Kategorie</a> |
+        <a href="/web/suppliers">Dostawcy</a>
+    </nav>
+
+    <p>
+        Aktualna kategoria: <strong>#(product.categoryName)</strong><br>
+        Aktualny dostawca: <strong>#(product.supplierName)</strong>
+    </p>
+
+    <form method="post" action="/web/products/#(product.id)/edit">
+        <p>
+            <label>Nazwa</label><br>
+            <input type="text" name="name" value="#(product.name)" required>
+        </p>
+
+        <p>
+            <label>Cena</label><br>
+            <input type="number" step="0.01" name="price" value="#(product.price)" required>
+        </p>
+
+        <p>
+            <label>Opis</label><br>
+            <input type="text" name="description" value="#(product.description)" required>
+        </p>
+
+        <p>
+            <label>Kategoria</label><br>
+            <select name="categoryID" required>
+                #for(category in categories):
+                    <option value="#(category.id)">#(category.name)</option>
+                #endfor
+            </select>
+        </p>
+
+        <p>
+            <label>Dostawca</label><br>
+            <select name="supplierID" required>
+                #for(supplier in suppliers):
+                    <option value="#(supplier.id)">#(supplier.name)</option>
+                #endfor
+            </select>
+        </p>
+
+        <button type="submit">Zapisz</button>
+    </form>
+
+    <p>
+        <a href="/web/products">Powrót</a>
+    </p>
+</body>
+</html>

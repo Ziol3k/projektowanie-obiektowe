@@ -13,7 +13,10 @@ struct ProductController: RouteCollection {
     }
 
     func index(req: Request) async throws -> [Product] {
-        try await Product.query(on: req.db).all()
+        try await Product.query(on: req.db)
+            .with(\.$category)
+            .with(\.$supplier)
+            .all()
     }
 
     func create(req: Request) async throws -> Product {
@@ -22,7 +25,9 @@ struct ProductController: RouteCollection {
         let product = Product(
             name: input.name,
             price: input.price,
-            description: input.description
+            description: input.description,
+            categoryID: input.categoryID,
+            supplierID: input.supplierID
         )
 
         try await product.save(on: req.db)
@@ -30,7 +35,13 @@ struct ProductController: RouteCollection {
     }
 
     func show(req: Request) async throws -> Product {
-        guard let product = try await Product.find(req.parameters.get("productID"), on: req.db) else {
+        guard let id = req.parameters.get("productID", as: UUID.self),
+              let product = try await Product.query(on: req.db)
+                .filter(\.$id == id)
+                .with(\.$category)
+                .with(\.$supplier)
+                .first()
+        else {
             throw Abort(.notFound)
         }
 
@@ -47,6 +58,8 @@ struct ProductController: RouteCollection {
         product.name = input.name
         product.price = input.price
         product.description = input.description
+        product.$category.id = input.categoryID
+        product.$supplier.id = input.supplierID
 
         try await product.save(on: req.db)
         return product

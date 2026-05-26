@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="utf-8">
+    <title>Kategorie</title>
+</head>
+<body>
+    <h1>Kategorie</h1>
+
+    <nav>
+        <a href="/web/products">Produkty</a> |
+        <a href="/web/categories">Kategorie</a> |
+        <a href="/web/suppliers">Dostawcy</a>
+    </nav>
+
+    <p>
+        <a href="/web/categories/create">Dodaj kategorię</a>
+    </p>
+
+    <table border="1" cellpadding="8">
+        <thead>
+            <tr>
+                <th>Nazwa</th>
+                <th>Akcje</th>
+            </tr>
+        </thead>
+        <tbody>
+        #for(category in categories):
+            <tr>
+                <td>#(category.name)</td>
+                <td>
+                    <a href="/web/categories/#(category.id)/edit">Edytuj</a>
+
+                    <form method="post" action="/web/categories/#(category.id)/delete" style="display:inline;">
+                        <button type="submit">Usuń</button>
+                    </form>
+                </td>
+            </tr>
+        #endfor
+        </tbody>
+    </table>
+</body>
+</html>

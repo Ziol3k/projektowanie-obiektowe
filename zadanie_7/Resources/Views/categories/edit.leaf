@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="utf-8">
+    <title>Edytuj kategorię</title>
+</head>
+<body>
+    <h1>Edytuj kategorię</h1>
+
+    <nav>
+        <a href="/web/products">Produkty</a> |
+        <a href="/web/categories">Kategorie</a> |
+        <a href="/web/suppliers">Dostawcy</a>
+    </nav>
+
+    <form method="post" action="/web/categories/#(category.id)/edit">
+        <p>
+            <label>Nazwa</label><br>
+            <input type="text" name="name" value="#(category.name)" required>
+        </p>
+
+        <button type="submit">Zapisz</button>
+    </form>
+
+    <p>
+        <a href="/web/categories">Powrót</a>
+    </p>
+</body>
+</html>

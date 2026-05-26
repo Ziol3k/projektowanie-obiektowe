@@ -7,6 +7,12 @@
 <body>
     <h1>Produkty</h1>
 
+    <nav>
+        <a href="/web/products">Produkty</a> |
+        <a href="/web/categories">Kategorie</a> |
+        <a href="/web/suppliers">Dostawcy</a>
+    </nav>
+
     <p>
         <a href="/web/products/create">Dodaj produkt</a>
     </p>
@@ -17,6 +23,8 @@
                 <th>Nazwa</th>
                 <th>Cena</th>
                 <th>Opis</th>
+                <th>Kategoria</th>
+                <th>Dostawca</th>
                 <th>Akcje</th>
             </tr>
         </thead>
@@ -26,6 +34,8 @@
                 <td>#(product.name)</td>
                 <td>#(product.price)</td>
                 <td>#(product.description)</td>
+                <td>#(product.categoryName)</td>
+                <td>#(product.supplierName)</td>
                 <td>
                     <a href="/web/products/#(product.id)/edit">Edytuj</a>
 
