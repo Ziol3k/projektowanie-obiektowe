@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="utf-8">
+    <title>Produkty</title>
+</head>
+<body>
+    <h1>Produkty</h1>
+
+    <p>
+        <a href="/web/products/create">Dodaj produkt</a>
+    </p>
+
+    <table border="1" cellpadding="8">
+        <thead>
+            <tr>
+                <th>Nazwa</th>
+                <th>Cena</th>
+                <th>Opis</th>
+                <th>Akcje</th>
+            </tr>
+        </thead>
+        <tbody>
+        #for(product in products):
+            <tr>
+                <td>#(product.name)</td>
+                <td>#(product.price)</td>
+                <td>#(product.description)</td>
+                <td>
+                    <a href="/web/products/#(product.id)/edit">Edytuj</a>
+
+                    <form method="post" action="/web/products/#(product.id)/delete" style="display:inline;">
+                        <button type="submit">Usuń</button>
+                    </form>
+                </td>
+            </tr>
+        #endfor
+        </tbody>
+    </table>
+</body>
+</html>

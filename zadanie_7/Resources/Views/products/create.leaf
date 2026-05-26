@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="utf-8">
+    <title>Dodaj produkt</title>
+</head>
+<body>
+    <h1>Dodaj produkt</h1>
+
+    <form method="post" action="/web/products">
+        <p>
+            <label>Nazwa</label><br>
+            <input type="text" name="name" required>
+        </p>
+
+        <p>
+            <label>Cena</label><br>
+            <input type="number" step="0.01" name="price" required>
+        </p>
+
+        <p>
+            <label>Opis</label><br>
+            <input type="text" name="description" required>
+        </p>
+
+        <button type="submit">Zapisz</button>
+    </form>
+
+    <p>
+        <a href="/web/products">Powrót</a>
+    </p>
+</body>
+</html>
