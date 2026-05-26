@@ -5,7 +5,5 @@ func routes(_ app: Application) throws {
         "It works!"
     }
 
-    app.get("hello") { req async -> String in
-        "Hello, world!"
-    }
+try app.register(collection: ProductController())
 }
