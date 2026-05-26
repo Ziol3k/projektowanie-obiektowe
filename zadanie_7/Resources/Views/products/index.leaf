@@ -14,6 +14,10 @@
     </nav>
 
     <p>
+        Liczba wejść na stronę produktów zapisana w Redis: #(views)
+    </p>
+
+    <p>
         <a href="/web/products/create">Dodaj produkt</a>
     </p>
 

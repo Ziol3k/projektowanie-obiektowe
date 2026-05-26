@@ -14,6 +14,9 @@ struct ProductViewController: RouteCollection {
     }
 
     func index(req: Request) async throws -> View {
+        _ = try await req.redis.increment("products_page_views").get()
+        let views = try await req.redis.get("products_page_views", as: Int.self).get() ?? 0
+
         let products = try await Product.query(on: req.db)
             .with(\.$category)
             .with(\.$supplier)
@@ -29,7 +32,8 @@ struct ProductViewController: RouteCollection {
                     categoryName: product.category.name,
                     supplierName: product.supplier.name
                 )
-            }
+            },
+            views: views
         )
 
         return try await req.view.render("products/index", context)
@@ -129,6 +133,7 @@ struct ProductViewController: RouteCollection {
 
 struct ProductIndexContext: Encodable {
     let products: [ProductViewData]
+    let views: Int
 }
 
 struct ProductFormContext: Encodable {
