@@ -4,6 +4,7 @@ import FluentSQLiteDriver
 import FluentPostgresDriver
 import Leaf
 import Redis
+import NIOSSL
 
 public func configure(_ app: Application) async throws {
     if let databaseURL = Environment.get("DATABASE_URL") {
@@ -14,8 +15,19 @@ public func configure(_ app: Application) async throws {
 
     app.views.use(.leaf)
 
-    let redisURL = Environment.get("REDIS_URL") ?? Environment.get("HEROKU_REDIS_URL") ?? "redis://localhost:6379"
-    app.redis.configuration = try RedisConfiguration(url: redisURL)
+    let redisURL = Environment.get("REDIS_URL")
+        ?? Environment.get("HEROKU_REDIS_URL")
+        ?? "redis://localhost:6379"
+
+    var tlsConfiguration = TLSConfiguration.makeClientConfiguration()
+    tlsConfiguration.certificateVerification = .none
+
+    app.redis.configuration = try RedisConfiguration(
+        url: redisURL,
+        tlsConfiguration: redisURL.hasPrefix("rediss://") || app.environment == .production
+            ? tlsConfiguration
+            : nil
+    )
 
     app.migrations.add(CreateCategory())
     app.migrations.add(CreateSupplier())
