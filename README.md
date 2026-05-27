@@ -138,7 +138,7 @@ https://github.com/user-attachments/assets/5d2751db-1c79-40c7-9d13-4907f77c2bbf
 
 
 
-# Zadanie 5 Zapaszki
+# Zadanie 6 Zapaszki
 Należy sprawdzić kod projektów JS 3.0, 3.5, 4.0,  kotlin, go, js - 4.5, 5.0.
 
 ✅ 3.0 Należy skonfigurować husky + lint-staged uruchamianie lintowania przed commitem [commit](https://github.com/Ziol3k/projektowanie-obiektowe/commit/866dd4b0f807893113e1c2a94e63eebc64766961)
@@ -165,11 +165,57 @@ Należy sprawdzić kod projektów JS 3.0, 3.5, 4.0,  kotlin, go, js - 4.5, 5.0.
 [commit 1](https://github.com/Ziol3k/projektowanie-obiektowe/commit/e621c5f62af878f8c5969f3563fa0d8bd5301b5a)
 [commit 2](https://github.com/Ziol3k/projektowanie-obiektowe/commit/fe054125f09206df9b9dbd3203efbaf5d637174c)
 
-Kod: [Link do zadania 5](https://github.com/Ziol3k/projektowanie-obiektowe/tree/main/zadanie_6)
+Kod: [Link do zadania 6](https://github.com/Ziol3k/projektowanie-obiektowe/tree/main/zadanie_6)
 
 [demo](https://github.com/Ziol3k/projektowanie-obiektowe/blob/main/demos/demo_zadanie_6.mp4)
 
 
 
 https://github.com/user-attachments/assets/e4121aaf-de1d-4e2e-84f4-af5e035e1914
+
+
+
+
+# Zadanie 7 
+Proszę napisać prostą aplikację w Vaporze, wykorzystując Leaf jako
+silnik szablonów or Fluent jako ORM. Proszę stworzyć trzy modele oraz
+CRUD dla każdego z nich. Należy stworzyć model z minimum jedną
+relacją. CRUD powinien mieć odzwierciedlenie w szablonach.
+
+✅ 3.0 Należy stworzyć kontroler wraz z modele Produktów zgodny z CRUD w ORM Fluent [commit](https://github.com/Ziol3k/projektowanie-obiektowe/commit/b84a13d290efc7257ae584252d60f61d699950b5)
+
+✅ 3.5 Należy stworzyć szablony w Leaf [commit](https://github.com/Ziol3k/projektowanie-obiektowe/commit/17c044fcbcaf224cdaa6219bddd004db14f4f55e)
+
+✅ 4.0 Należy stworzyć drugi model oraz kontroler Kategorii wraz z relacją [commit](https://github.com/Ziol3k/projektowanie-obiektowe/commit/f69e8494d934b3423761aabd120ef7d90d920c0c)
+
+✅ 4.5 Należy wykorzystać Redis do przechowywania danych [commit](https://github.com/Ziol3k/projektowanie-obiektowe/commit/8421a31a2b6c3904c9b83ae8fea5914755d87560)
+
+✅ 5.0 Wrzucić aplikację na heroku [commit](https://github.com/Ziol3k/projektowanie-obiektowe/commit/8c606a728a227fc88b19e488e4f97a07ce4013bd)
+
+Kod: [Link do zadania 7](https://github.com/Ziol3k/projektowanie-obiektowe/tree/main/zadanie_7)
+
+[demo](https://github.com/Ziol3k/projektowanie-obiektowe/blob/main/demos/demo_zadanie_7.mp4)
+
+
+# Zadanie 8
+Wykorzystaj do tego zadania Selenium/Webdrivera (Kotlin, Python, Java,
+JS, Go, Scala)
+
+[commit przygotowawczy z dodaniem funkcjonalności do zadania_5](https://github.com/Ziol3k/projektowanie-obiektowe/commit/d3adf2498f12772ef32e54b187923034ff9b5226)
+[commit 2](https://github.com/Ziol3k/projektowanie-obiektowe/commit/575992afc7b15f07ab93a17016a8e17cb9c51616)
+
+✅ 3.0 Przetestuj formularz rejestracji użytkownika pod kątem walidacji pól obowiązkowych oraz zachowania aplikacji po wprowadzeniu niepoprawnego formatu adresu e-mail. [commit](https://github.com/Ziol3k/projektowanie-obiektowe/commit/83a4d27e16e742cd552d4dc81f202fcad19fc58d)
+
+✅ 3.5 Przeprowadź testy bezpieczeństwa typu Cross-Site Scripting (XSS), próbując wstrzyknąć złośliwy kod JavaScript w aplikacji z Reactem [commit](https://github.com/Ziol3k/projektowanie-obiektowe/commit/0d39c09d101f865daf84b03a1ac624ed132ae83b)
+
+✅ 4.0 Przetestuj działanie koszyka zakupowego przy jednoczesnym otwarciu aplikacji w kilku osobnych kartach tej samej przeglądarki, sprawdzając spójność stanów zamówienia (aplikacja z zadania z React'em) [commit](https://github.com/Ziol3k/projektowanie-obiektowe/commit/994d036197b59b29bf883685702a70ee14e7ad57)
+
+✅ 4.5 Do zadania z React'a należy dodać formularz logowania. Następnie przeprowadź testy podatności na ataki typu Cross-Site Request Forgery (CSRF), próbując wymusić nieautoryzowaną zmianę ustawień konta spreparowanym linkiem, podczas gdy użytkownik posiada aktywną sesję w innej karcie. [commit](https://github.com/Ziol3k/projektowanie-obiektowe/commit/4d92a23820089b570e5c2e1d56b787e6955a32dc)
+
+✅ 5.0 Stwórz scenariusz End-to-End w Playwright (minimum 50 asercji) [commit](https://github.com/Ziol3k/projektowanie-obiektowe/commit/549dafb59e720bc26d46ee87ab131870b3f922e6)
+
+Kod: [Link do zadania 8](https://github.com/Ziol3k/projektowanie-obiektowe/tree/main/zadanie_8)
+
+[demo](https://github.com/Ziol3k/projektowanie-obiektowe/blob/main/demos/demo_zadanie_8.mp4)
+
 
