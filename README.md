@@ -1,3 +1,7 @@
+
+
+https://github.com/user-attachments/assets/cf124a8e-3a42-4e3a-b2a0-ccd8a35d7ba8
+
 # Zadanie 1  Paradygmaty Sortowanie bąbelkowe
 
 ✅ 3.0 Procedura do generowania 50 losowych liczb od 0 do 100 [commit](https://github.com/Ziol3k/projektowanie-obiektowe/commit/50a24c5c169d25adb01fc9a18accaac08b504363)
@@ -197,6 +201,13 @@ Kod: [Link do zadania 7](https://github.com/Ziol3k/projektowanie-obiektowe/tree/
 [demo](https://github.com/Ziol3k/projektowanie-obiektowe/blob/main/demos/demo_zadanie_7.mp4)
 
 
+
+
+https://github.com/user-attachments/assets/e91d8fe0-6fba-40f3-ab9e-a320ecb6f654
+
+
+
+
 # Zadanie 8
 Wykorzystaj do tego zadania Selenium/Webdrivera (Kotlin, Python, Java,
 JS, Go, Scala)
@@ -218,4 +229,7 @@ Kod: [Link do zadania 8](https://github.com/Ziol3k/projektowanie-obiektowe/tree/
 
 [demo](https://github.com/Ziol3k/projektowanie-obiektowe/blob/main/demos/demo_zadanie_8.mp4)
 
+
+
+https://github.com/user-attachments/assets/0e3cfc5e-7b39-4c8b-9349-ae7ef27e9a4e
 
