@@ -1,7 +1,4 @@
 
-
-https://github.com/user-attachments/assets/cf124a8e-3a42-4e3a-b2a0-ccd8a35d7ba8
-
 # Zadanie 1  Paradygmaty Sortowanie bąbelkowe
 
 ✅ 3.0 Procedura do generowania 50 losowych liczb od 0 do 100 [commit](https://github.com/Ziol3k/projektowanie-obiektowe/commit/50a24c5c169d25adb01fc9a18accaac08b504363)
