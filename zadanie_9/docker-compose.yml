@@ -1,0 +1,18 @@
+services:
+  backend:
+    build:
+      context: ../zadanie_5/backend
+      dockerfile: Dockerfile.prod
+    container_name: zadanie9-backend-local
+    ports:
+      - "3001:3001"
+
+  frontend:
+    build:
+      context: ../zadanie_5/frontend
+      dockerfile: Dockerfile.prod
+    container_name: zadanie9-frontend-local
+    ports:
+      - "8080:80"
+    depends_on:
+      - backend

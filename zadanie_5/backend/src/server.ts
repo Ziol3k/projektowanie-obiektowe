@@ -7,13 +7,20 @@ const PORT = 3001;
 
 app.use(
   cors({
-    origin: "http://localhost:5173",
     methods: ["GET", "POST"],
     allowedHeaders: ["Content-Type", "Authorization"],
   })
 );
 
 app.use(express.json());
+
+app.get("/health", (_req, res) => {
+  res.json({ status: "ok" });
+});
+
+app.get("/api/health", (_req, res) => {
+  res.json({ status: "ok" });
+});
 
 type Product = {
   id: number;

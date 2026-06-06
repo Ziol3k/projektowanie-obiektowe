@@ -1,0 +1,16 @@
+services:
+  backend:
+    image: ${BACKEND_IMAGE}
+    container_name: zadanie9-backend
+    restart: unless-stopped
+    ports:
+      - "3001:3001"
+
+  frontend:
+    image: ${FRONTEND_IMAGE}
+    container_name: zadanie9-frontend
+    restart: unless-stopped
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
