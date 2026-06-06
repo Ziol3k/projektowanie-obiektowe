@@ -171,6 +171,8 @@ Należy sprawdzić kod projektów JS 3.0, 3.5, 4.0,  kotlin, go, js - 4.5, 5.0.
 
 Kod: [Link do zadania 6](https://github.com/Ziol3k/projektowanie-obiektowe/tree/main/zadanie_6)
 
+[Link do plikow w .workflows](https://github.com/Ziol3k/projektowanie-obiektowe/tree/main/.github/workflows)
+
 [demo](https://github.com/Ziol3k/projektowanie-obiektowe/blob/main/demos/demo_zadanie_6.mp4)
 
 
@@ -233,3 +235,24 @@ Kod: [Link do zadania 8](https://github.com/Ziol3k/projektowanie-obiektowe/tree/
 
 https://github.com/user-attachments/assets/0e3cfc5e-7b39-4c8b-9349-ae7ef27e9a4e
 
+
+# Zadanie 10 Chmura
+
+Do wykonania tego zadania posłużył projekt zadanie_5
+
+✅ 3.0 Należy stworzyć odpowiednie instancje po stronie chmury na dockerze [commit](https://github.com/Ziol3k/projektowanie-obiektowe/commit/02b69722cdc9b89726615d7bd32a27381bad9ff8)
+
+✅ 3.5 Stworzyć odpowiedni pipeline w Github Actions do budowania aplikacji [commit 1](https://github.com/Ziol3k/projektowanie-obiektowe/commit/f23a23308fc549c18ef492440fc948a6191a3d21)
+[commit 2](https://github.com/Ziol3k/projektowanie-obiektowe/commit/2a870ac5de8dab88973dff8075b6fefc1b6852ea)
+
+✅ 4.0 Dodać notyfikację mailową o zbudowaniu aplikacji [commit](https://github.com/Ziol3k/projektowanie-obiektowe/commit/52517acf781af2c02289cb7b106876629226b414)
+
+✅ 4.5 Dodać krok z deploymentem aplikacji serwerowej oraz klienckiej na chmurę [commit 1](https://github.com/Ziol3k/projektowanie-obiektowe/commit/34181df49d1f4cd572de780e8751dd21df101da3)
+
+✅ 5.0 Dodać uruchomienie regresyjnych testów automatycznych (funkcjonalnych) jako krok w Actions [commit](https://github.com/Ziol3k/projektowanie-obiektowe/commit/1f0fec7a900faf142096dc17d13fed98fc828dc0)
+
+Kod: [Link do zadania 9](https://github.com/Ziol3k/projektowanie-obiektowe/tree/main/zadanie_9)
+
+[Link do pliku w .workflows](https://github.com/Ziol3k/projektowanie-obiektowe/blob/main/.github/workflows/zadanie_9.yml)
+
+[demo](https://github.com/Ziol3k/projektowanie-obiektowe/blob/main/demos/demo_zadanie_9.mp4)
