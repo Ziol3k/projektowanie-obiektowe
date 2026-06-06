@@ -16,9 +16,9 @@ permissions:
 
 env:
   REGISTRY: ghcr.io
-  BACKEND_IMAGE: ghcr.io/${{ github.repository_owner }}/zadanie9-backend
-  FRONTEND_IMAGE: ghcr.io/${{ github.repository_owner }}/zadanie9-frontend
-
+  BACKEND_IMAGE: ghcr.io/ziol3k/zadanie9-backend
+  FRONTEND_IMAGE: ghcr.io/ziol3k/zadanie9-frontend
+  
 jobs:
   build:
     name: Build Docker images
