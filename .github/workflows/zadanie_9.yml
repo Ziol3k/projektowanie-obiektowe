@@ -16,7 +16,6 @@ permissions:
   actions: read
 
 env:
-  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
   REGISTRY: ghcr.io
   BACKEND_IMAGE: ghcr.io/ziol3k/zadanie9-backend
   FRONTEND_IMAGE: ghcr.io/ziol3k/zadanie9-frontend
@@ -28,9 +27,7 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+        uses: actions/checkout@v5
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
@@ -92,9 +89,7 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+        uses: actions/checkout@v5
 
       - name: Check deployment secrets
         run: |
